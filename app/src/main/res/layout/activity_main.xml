@@ -5,6 +5,60 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#BFDEA2"
     tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/textViewMyFinances"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="My Finances"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewMyFinances">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/buttonCD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#00BCD4"
+                android:drawableTop="@android:drawable/btn_star"
+                android:text="CDs" />
+
+            <Button
+                android:id="@+id/buttonLoans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#AF00BCD4"
+                android:drawableTop="@android:drawable/ic_dialog_alert"
+                android:text="Loans" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/buttonCheckingAccounts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#C000BCD4"
+            android:drawableTop="@android:drawable/btn_star_big_on"
+            android:text="Checking Accounts" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

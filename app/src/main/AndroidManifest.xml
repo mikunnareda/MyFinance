@@ -13,14 +13,17 @@
         android:theme="@style/Theme.MyFinances"
         tools:targetApi="31">
         <activity
+            android:name=".CheckingAccounts"
+            android:exported="false" />
+        <activity
+            android:name=".Loans"
+            android:exported="false" />
+        <activity
+            android:name=".CDs"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>
