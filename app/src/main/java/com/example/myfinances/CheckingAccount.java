@@ -1,12 +1,11 @@
 package com.example.myfinances;
-public class CDs {
+
+public class CheckingAccount {
     private int id;
     private String accountNumber;
-    private double initialBalance;
     private double currentBalance;
-    private double interestRate;
 
-    public CD() { }
+    public Checking() { }
 
     // Getters and Setters
     public int getId() { return id; }
@@ -15,12 +14,6 @@ public class CDs {
     public String getAccountNumber() { return accountNumber; }
     public void setAccountNumber(String accountNumber) { this.accountNumber = accountNumber; }
 
-    public double getInitialBalance() { return initialBalance; }
-    public void setInitialBalance(double initialBalance) { this.initialBalance = initialBalance; }
-
     public double getCurrentBalance() { return currentBalance; }
     public void setCurrentBalance(double currentBalance) { this.currentBalance = currentBalance; }
-
-    public double getInterestRate() { return interestRate; }
-    public void setInterestRate(double interestRate) { this.interestRate = interestRate; }
 }

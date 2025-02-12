@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText editAccountNumber, editInitialBalance, editCurrentBalance, editInterestRate, editPaymentAmount;
     private RadioGroup radioGroup;
     private Button btnSave, btnCancel;
+    private FinanceDataSource dataSource;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,19 +39,32 @@ public class MainActivity extends AppCompatActivity {
         btnSave = findViewById(R.id.btnSave);
         btnCancel = findViewById(R.id.btnCancel);
 
-        btnSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                saveData();
-            }
-        });
+        dataSource = new FinanceDataSource(this);
+        dataSource.open();
 
-        btnCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clearFields();
-            }
-        });
+        radioGroup.setOnCheckedChangeListener((group, checkedId) -> toggleFields(checkedId));
+
+        btnSave.setOnClickListener(v -> saveData());
+        btnCancel.setOnClickListener(v -> clearFields());
+    }
+    private void toggleFields(int checkedId) {
+        editInitialBalance.setVisibility(View.GONE);
+        editCurrentBalance.setVisibility(View.GONE);
+        editInterestRate.setVisibility(View.GONE);
+        editPaymentAmount.setVisibility(View.GONE);
+
+        if (checkedId == R.id.buttonCD) {
+            editInitialBalance.setVisibility(View.VISIBLE);
+            editCurrentBalance.setVisibility(View.VISIBLE);
+            editInterestRate.setVisibility(View.VISIBLE);
+        } else if (checkedId == R.id.buttonLoans) {
+            editInitialBalance.setVisibility(View.VISIBLE);
+            editCurrentBalance.setVisibility(View.VISIBLE);
+            editInterestRate.setVisibility(View.VISIBLE);
+            editPaymentAmount.setVisibility(View.VISIBLE);
+        } else if (checkedId == R.id.buttonCheckingAccounts) {
+            editCurrentBalance.setVisibility(View.VISIBLE);
+        }
     }
     private void saveData() {
         // Retrieve data from input fields

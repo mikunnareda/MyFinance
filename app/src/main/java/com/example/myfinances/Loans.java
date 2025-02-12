@@ -1,24 +1,31 @@
 package com.example.myfinances;
 
-import android.os.Bundle;
+public class Loans {
+    private int id;
+    private String accountNumber;
+    private double initialBalance;
+    private double currentBalance;
+    private double paymentAmount;
+    private double interestRate;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+    public Loan() { }
 
-public class Loans extends AppCompatActivity {
+    // Getters and Setters
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_loans);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-    }
+    public String getAccountNumber() { return accountNumber; }
+    public void setAccountNumber(String accountNumber) { this.accountNumber = accountNumber; }
+
+    public double getInitialBalance() { return initialBalance; }
+    public void setInitialBalance(double initialBalance) { this.initialBalance = initialBalance; }
+
+    public double getCurrentBalance() { return currentBalance; }
+    public void setCurrentBalance(double currentBalance) { this.currentBalance = currentBalance; }
+
+    public double getPaymentAmount() { return paymentAmount; }
+    public void setPaymentAmount(double paymentAmount) { this.paymentAmount = paymentAmount; }
+
+    public double getInterestRate() { return interestRate; }
+    public void setInterestRate(double interestRate) { this.interestRate = interestRate; }
 }
